@@ -23,5 +23,25 @@ public class Controller : MonoBehaviour
 
 		float mouseInputX = Input.GetAxis("Mouse X") * MouseSensitivity;
 		transform.rotation = Quaternion.Euler(transform.eulerAngles + new Vector3(0f, mouseInputX, 0f));
+
+		if (Input.GetMouseButtonDown(0))
+		{
+			RaycastHit hit;
+			if (Physics.Raycast(CamTransform.position, CamTransform.forward, out hit))
+			{
+				Enemy hitEnemy = hit.collider.GetComponent<Enemy>();
+
+				if (hitEnemy != null)
+				{
+					Destroy(hit.transform.gameObject);
+
+				}
+
+
+
+			}
+
+		}
+
+		}
 	}
-}
