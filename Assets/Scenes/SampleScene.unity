@@ -157,6 +157,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zombie: {fileID: 545195676}
   ghost: {fileID: 545195676}
+  Player: {fileID: 1234609235}
+  speed: 1
 --- !u!135 &545195678
 SphereCollider:
   m_ObjectHideFlags: 0
