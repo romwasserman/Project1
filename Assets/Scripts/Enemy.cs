@@ -12,10 +12,22 @@ public class Enemy : MonoBehaviour
     private float Timer;
     private int numEnemies;
     private GameObject Clone;
+    public float health = 20f;
+
     // Start is called before the first frame update
     void Start()
     {
         Player = GameObject.Find("Player");
+    }
+    // Start is called before the first frame update
+    public void TakeDamage(float amount)
+    {
+        health -= amount;
+        Debug.Log(health);
+        if (health <= 0f)
+        {
+            Destroy(gameObject);
+        }
     }
 
     // Update is called once per frame
